@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head >
+        <style>
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            section {
+                position: relative;
+                width: 100%;
+                height: 40vh;
+            }
+            section #slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            section .navigation {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 100;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            section .navigation li {
+                list-style: none;
+                cursor: pointer;
+                margin: 0 10px;
+                border-radius: 4px;
+                background: rgb(148, 26, 26);
+                padding: 3px 3px 0;
+                opacity: 0.7;
+                transition: .5s;
+                animation: fadeOut;
+                animation-duration: 1s;
+                animation-delay: 5s;
+            }
+
+            @keyframes fadeOut {
+                0% {
+                    opacity: 0.7;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            
+            section .navigation li:hover
+            {
+                opacity: 1;
+            }
+
+            section .navigation li img
+            {
+                width: 160px;
+                transition: 0.5s;
+            }
+            section .navigation li img:hover {
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <iframe id="slider" type="text/html" src="https://www.youtube.com/embed/fabEWieAI-k?controls=0&autoplay=1&autohide=1" frameborder="0" allow="autoplay" ></iframe>
+            <ul class="navigation">
+                <li onclick="videoUrl('https://www.youtube.com/embed/fabEWieAI-k?controls=0&autoplay=1&autohide=1')"><img src="https://i.imgur.com/eiHNrb9.jpg"></li>
+                <li onclick="videoUrl('https://www.youtube.com/embed/a4xQBm33EW8?controls=0&autoplay=1&autohide=1')"><img src="https://i.imgur.com/rZL1ALv.jpg"></li>
+            </ul>
+        </section>
+        <script>
+            function videoUrl(url) {
+                document.getElementById("slider").src = url;
+            }
+        </script>
+    </body>
+</html>
